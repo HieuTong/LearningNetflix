@@ -13,6 +13,8 @@ class SearchResultsViewController: UIViewController {
     
     private let searchResultsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 10) / 3, height: 200)
+        layout.minimumInteritemSpacing = 10
         layout.itemSize = CGSize(width: 100, height: 200)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(TitleTableViewCell.self, forCellWithReuseIdentifier: TitleTableViewCell.identifier)
@@ -44,6 +46,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
             return UICollectionViewCell()
         }
         
+        cell.backgroundColor = .blue
         return cell
     }
 }
